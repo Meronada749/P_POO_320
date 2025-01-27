@@ -11,30 +11,24 @@ namespace P_POO_320
     {
         static void Main(string[] args)
         {
-
-            string window = "The window width is {0}, and the height is {1}.";
-            // Step 1: Set the window to 150x40.
+           
             Console.SetWindowSize(150, 40);
-            Console.WriteLine(window, Console.WindowWidth, Console.WindowHeight);
 
+            Console.ForegroundColor = ConsoleColor.Green;
 
-            People people1 = new People(5,5);
-            Console.SetCursorPosition((int)people1.Position.X, (int)people1.Position.Y);
-            foreach (string s in people1.Person)
+            Console.SetCursorPosition(0, 40);
+            Console.Write("--------------------------------------------------------------");
+
+            Game game = new Game();
+            game.Player1.Positions();
+            game.Player2.Positions();
+
+            foreach (IUpdateable item in Game.updateable)
             {
-                Console.SetCursorPosition((int)people1.Position.X, Console.CursorTop);
-                Console.WriteLine(s);
+                item.Display();
             }
 
-            People people2 = new People(100,5);
-            Console.SetCursorPosition((int)people2.Position.X,(int)people2.Position.Y);
-            foreach (string s in people2.Person)
-            {
-                Console.SetCursorPosition((int)people2.Position.X, Console.CursorTop);
-                Console.WriteLine(s);
-            }
-
-
+            Console.WriteLine();
         }
     }
 }

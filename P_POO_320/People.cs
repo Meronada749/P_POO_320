@@ -1,12 +1,14 @@
-﻿using System.Numerics;
+﻿using System;
+using System.Numerics;
 
 namespace P_POO_320
 {
     internal class People
     {
-        //Properties
-        public string Name { get; set; }
-        public int Life { get; set; }
+        /// <summary>
+        /// chris mark
+        /// </summary>      
+        public Vector2 Position { get; set; }
         public string[] Person {  get; set; } =
         {
             @" O ",
@@ -14,18 +16,26 @@ namespace P_POO_320
             @"/ \"
         };
 
-        public Vector2 Position { get; set; }
 
-
-        /*---------------------------------------------------------------------------------------------------------------------*/
         /// <summary>
         /// Custom constructor
         /// </summary>
-        public People(/*string Name, int Life*/ int x, int y)
+        public People(int x, int y)
         {
-            //this.Name = Name;
-            //this.Life = Life;
             Position = new Vector2(x,y); 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Positions()
+        {
+            Console.SetCursorPosition((int)Position.X, (int)Position.Y);
+            foreach (string s in Person)
+            {
+                Console.SetCursorPosition((int)Position.X, Console.CursorTop);
+                Console.WriteLine(s);
+            }
         }
 
     }
