@@ -20,7 +20,7 @@ namespace P_POO_320
         /// <summary>
         /// Custom constructor
         /// </summary>
-        public People(int x, int y)
+        public People(int x, int x)
         {
             Position = new Vector2(x,y); 
         }
