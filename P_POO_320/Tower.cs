@@ -6,7 +6,6 @@ namespace P_POO_320
 {
     internal class Tower : IUpdateable
     {
-
         public Vector2 Position { get; set; }
         public int Height { get; set; }
         public int Width { get; set; } // width for tower
