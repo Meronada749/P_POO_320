@@ -1,5 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿///ETML
+///Auteur : Meron Essayas
+///Date : 17.01.2025
+///Description: 
+
+using System;
 using System.Numerics;
 
 namespace P_POO_320
@@ -9,15 +13,9 @@ namespace P_POO_320
         public Vector2 Position { get; set; }
         public int Height { get; set; }
         public int Width { get; set; } // width for tower
+
         private const char WALL_FORM = '*';
 
-        /// <summary>
-        /// Custom constructor
-        /// </summary>
-        /// <param name="height"></param>
-        /// <param name="width"></param>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
         public Tower(int height, int width, int x, int y)
         {
             Height = height;
@@ -26,10 +24,6 @@ namespace P_POO_320
             Game.updateable.Add(this);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
         public string[] GetTowerStructure()
         {
             string[] structure = new string[Height];
@@ -44,16 +38,14 @@ namespace P_POO_320
             return structure;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
         public void Display()
         {
             Console.SetCursorPosition((int)Position.X, (int)Position.Y);
+
             foreach (string item in GetTowerStructure())
             {
-                Console.SetCursorPosition((int)Position.X, Console.CursorTop);
-                Console.WriteLine(item);
+                Console.SetCursorPosition((int)Position.X, --Console.CursorTop);
+                Console.Write(item);
             }
         }
     }
