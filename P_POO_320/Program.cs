@@ -10,34 +10,25 @@ namespace P_POO_320
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[]args)
         {
-            Console.OutputEncoding = Encoding.UTF8;
-            Console.SetWindowSize(150, 40);
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.CursorVisible = false;   
-            Console.SetCursorPosition(0, 40);
-            Console.Write("-----------------------------------------------------------------");
-
-
             Game game = new Game();
 
-            game.Projectile.Launch(70f, 5f, game.Player1.PlayerPosition);
-            for (int i = 0; i < 70; i++)            
-            {               
-                foreach (IUpdateable item in Game.updateable)
-                {
-                    item.Display();
+            Console.OutputEncoding = Encoding.UTF8;
 
-                    if (item is Ball proj)
-                    {
-                        proj.Update();
-                    }
-                }
-                System.Threading.Thread.Sleep(50);
+            Console.SetWindowSize(150, 40);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.CursorVisible = false;
+            Console.SetCursorPosition((int)Game.GroundPosition.X, (int)Game.GroundPosition.Y);
+            Console.Write("-----------------------------------------------------------------");
 
-            }
-            Console.WriteLine();
+            game.Ball.PressSpaceBar(game.Player1);
+             
+
+
+
+            Console.ReadLine();
         }
+
     }
 }

@@ -23,13 +23,12 @@ namespace P_POO_320
         {
             this.PlayerColor = PlayerColor;
             PlayerPosition = new Vector2(x,y);
+
             Game.updateable.Add(this);
         }
-
         public void Display()
         {
             Console.SetCursorPosition((int)PlayerPosition.X, (int)PlayerPosition.Y);
-            
 
             foreach (string item in Person)
             {

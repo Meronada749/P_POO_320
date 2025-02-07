@@ -13,7 +13,6 @@ namespace P_POO_320
         public Vector2 Position { get; set; }
         public int Height { get; set; }
         public int Width { get; set; } // width for tower
-
         private const char WALL_FORM = '*';
 
         public Tower(int height, int width, int x, int y)
@@ -21,9 +20,9 @@ namespace P_POO_320
             Height = height;
             Width = width;
             Position = new Vector2(x, y);
+
             Game.updateable.Add(this);
         }
-
         public string[] GetTowerStructure()
         {
             string[] structure = new string[Height];
@@ -37,7 +36,6 @@ namespace P_POO_320
 
             return structure;
         }
-
         public void Display()
         {
             Console.SetCursorPosition((int)Position.X, (int)Position.Y);
