@@ -8,7 +8,7 @@ using System.Numerics;
 
 namespace P_POO_320
 {
-    internal class Ball : IUpdateable
+    internal class Ball : IUpdateable, IDamageable
     {
         public Vector2 Position { get; set; }
         public Vector2? LastPosition; //nullable
@@ -94,6 +94,11 @@ namespace P_POO_320
 
                 System.Threading.Thread.Sleep(50);  // Delay to control frame rate
             }
+        }
+
+        public void Damage()
+        {
+
         }
     }
 }

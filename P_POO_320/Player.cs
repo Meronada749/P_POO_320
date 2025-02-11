@@ -8,7 +8,7 @@ using System.Numerics;
 
 namespace P_POO_320
 {
-    internal class Player : IUpdateable
+    internal class Player : IUpdateable, IDamageable
     {
         public Vector2 PlayerPosition { get; set; } 
         public ConsoleColor PlayerColor { get; set; } 
@@ -37,6 +37,11 @@ namespace P_POO_320
                 Console.WriteLine(item);
                 Console.ResetColor();
             }
+        }
+
+        public void Damage()
+        {
+
         }
     }
 }

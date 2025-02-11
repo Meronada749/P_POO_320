@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game.cs" />
+    <Compile Include="IDamageable.cs" />
     <Compile Include="IUpdateable.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />

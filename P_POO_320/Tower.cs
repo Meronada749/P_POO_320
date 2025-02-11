@@ -8,11 +8,11 @@ using System.Numerics;
 
 namespace P_POO_320
 {
-    internal class Tower : IUpdateable
+    internal class Tower : IUpdateable, IDamageable
     {
         public Vector2 Position { get; set; }
-        public int Height { get; set; }
-        public int Width { get; set; } // width for tower
+        public int Height { get; set; } // Height for Tower
+        public int Width { get; set; } // Width for Tower
         private const char WALL_FORM = '*';
 
         public Tower(int height, int width, int x, int y)
@@ -45,6 +45,11 @@ namespace P_POO_320
                 Console.SetCursorPosition((int)Position.X, --Console.CursorTop);
                 Console.Write(item);
             }
+        }
+
+        public void Damage()
+        {
+
         }
     }
 }
