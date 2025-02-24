@@ -14,6 +14,10 @@ namespace P_POO_320
         public int Height { get; set; } // Height for Tower
         public int Width { get; set; } // Width for Tower
         private const char WALL_FORM = '*';
+        /// <summary>
+        /// every cell can be true or false
+        /// </summary>
+        private bool [,] CellState; 
 
         public Tower(int height, int width, int x, int y)
         {
@@ -21,35 +25,44 @@ namespace P_POO_320
             Width = width;
             Position = new Vector2(x, y);
 
-            Game.updateable.Add(this);
-        }
-        public string[] GetTowerStructure()
-        {
-            string[] structure = new string[Height];
-
-            string stars = new string(WALL_FORM, Width);
-
+            CellState = new bool[Height,Width];
             for (int i = 0; i < Height; i++)
             {
-                structure[i] = stars;
+                for (int j = 0; j < Width; j++)
+                {
+                    CellState[i,j] = true;
+                }
             }
 
-            return structure;
+            Game.updateable.Add(this);
+
         }
+
         public void Display()
         {
             Console.SetCursorPosition((int)Position.X, (int)Position.Y);
 
-            foreach (string item in GetTowerStructure())
+            for (int i = 0; i < Height; i++)
             {
-                Console.SetCursorPosition((int)Position.X, --Console.CursorTop);
-                Console.Write(item);
+                for (int j = 0; j < Width; j++)
+                {
+
+                }
             }
         }
+        public void CheckPosition()
+        {
+            //for (int i = 0; i < Height; i++)
+            //{
+            //    for (int i = 0; i < length; i++)
+            //    {
 
+            //    }
+            //}
+        }
         public void Damage()
         {
-
+            
         }
     }
 }
