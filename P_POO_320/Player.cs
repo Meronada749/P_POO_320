@@ -10,8 +10,8 @@ namespace P_POO_320
 {
     internal class Player : IUpdateable, IDamageable
     {
+        public ConsoleColor PlayerColor { get; set; }
         public Vector2 PlayerPosition { get; set; } 
-        public ConsoleColor PlayerColor { get; set; } 
         public string[] Person {  get; set; } =
         {
             @" O ",
@@ -21,8 +21,8 @@ namespace P_POO_320
 
         public Player(int x, int y, ConsoleColor PlayerColor)
         {
+            PlayerPosition = new Vector2(x, y);
             this.PlayerColor = PlayerColor;
-            PlayerPosition = new Vector2(x,y);
 
             Game.updateable.Add(this);
         }

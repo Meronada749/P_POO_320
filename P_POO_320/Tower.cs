@@ -37,7 +37,6 @@ namespace P_POO_320
             Game.updateable.Add(this);
 
         }
-
         public void Display()
         {
             Console.SetCursorPosition((int)Position.X, (int)Position.Y);
@@ -46,8 +45,12 @@ namespace P_POO_320
             {
                 for (int j = 0; j < Width; j++)
                 {
-
+                    Console.Write(CellState[i, j] ? WALL_FORM.ToString() : " ");
                 }
+
+                Console.WriteLine();
+                Console.SetCursorPosition((int)Position.X, (int)Position.Y);
+                Position = new Vector2(Position.X, Position.Y - 1);
             }
         }
         public void CheckPosition()

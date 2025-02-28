@@ -4,6 +4,7 @@
 ///Description: 
 
 using System;
+using System.ComponentModel;
 using System.Text;
 
 namespace P_POO_320
@@ -22,11 +23,13 @@ namespace P_POO_320
             Console.SetCursorPosition((int)Game.GroundPosition.X, (int)Game.GroundPosition.Y);
             Console.Write("-----------------------------------------------------------------");
 
+            foreach (IUpdateable item in Game.updateable)
+            {
+               item.Display();
+            }
+
             game.Ball.PressSpaceBar(game.Player1);
              
-
-
-
             Console.ReadLine();
         }
 
