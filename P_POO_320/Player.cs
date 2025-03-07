@@ -13,11 +13,6 @@ namespace P_POO_320
     internal class Player : IUpdateable, IDamageable
     {
         /// <summary>
-        /// player's color
-        /// </summary>
-        public ConsoleColor PlayerColor { get; set; }
-
-        /// <summary>
         /// field to store the player's position as a Vector2.
         /// </summary>
         private Vector2 _playerposition;
@@ -30,6 +25,11 @@ namespace P_POO_320
             get { return _playerposition; }
             set { _playerposition = value; }
         }
+
+        /// <summary>
+        /// player's color
+        /// </summary>
+        public ConsoleColor PlayerColor { get; set; }
 
         /// <summary>
         /// The drawing that represents the player using a simple ASCII art representation.
