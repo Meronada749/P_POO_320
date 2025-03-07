@@ -7,6 +7,6 @@ namespace P_POO_320
 {
     internal interface IDamageable
     {
-        void Damage();
+        void DestroyBall();
     }
 }
