@@ -131,19 +131,7 @@ namespace P_POO_320
         /// </summary>
         /// <param name="x">The X coordinate of the cell to destroy.</param>
         /// <param name="y">The Y coordinate of the cell to destroy.</param>
-        public void DestroyTowerCase(int x, int y)
-        {
-            // Ensure the (x, y) coordinates are within the bounds of the tower.
-            if (x >= 0 && x < Width && y >= 0 && y < Height)
-                CellState[y, x] = false; // Mark the cell as destroyed (set to false).
-        }
 
-        /// <summary>
-        /// Destroys the specific block (cell) at the given (x, y) position.
-        /// Same functionality as DestroyTowerCase, but may be used in different contexts.
-        /// </summary>
-        /// <param name="x">The X coordinate of the block to destroy.</param>
-        /// <param name="y">The Y coordinate of the block to destroy.</param>
         public void DestroyBlock(int x, int y)
         {
             // Ensure the (x, y) coordinates are within the bounds of the tower.

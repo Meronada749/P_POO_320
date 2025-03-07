@@ -39,7 +39,7 @@ namespace P_POO_320
         /// <summary>
         /// Constant value for the friction applied to the ball's velocity.
         /// </summary>
-        private const float Friction = 0.2f;
+        private const float FRICTION = 0.2f;
 
         /// <summary>
         /// Constant value for gravity applied to the ball (affects the vertical velocity).
@@ -120,10 +120,10 @@ namespace P_POO_320
             LastBallPosition = BallPosition;
 
             // Update the ball's position based on its velocity, considering friction.
-            BallPosition += Velocity * Friction;
+            BallPosition += Velocity * FRICTION;
 
             // Apply gravity to the vertical component of the velocity.
-            Velocity = new Vector2(Velocity.X, Velocity.Y + GRAVITY * Friction);
+            Velocity = new Vector2(Velocity.X, Velocity.Y + GRAVITY * FRICTION);
         }
 
         /// <summary>
