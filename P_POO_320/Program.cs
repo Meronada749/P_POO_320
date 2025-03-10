@@ -57,6 +57,8 @@ namespace P_POO_320
                     item.Display();
                 }
 
+                
+
                 // Wait for the user to press Enter to continue to the next iteration of the game loop.
                 // This can be removed for smoother gameplay if not required.
                 Console.ReadLine();

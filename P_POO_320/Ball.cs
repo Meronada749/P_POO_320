@@ -76,18 +76,21 @@ namespace P_POO_320
         /// </summary>
         public void Display()
         {
-            // Clear the ball's previous position if it exists.
-            if (LastBallPosition.HasValue)
+            if (!IsDestroyed)
             {
-                Console.SetCursorPosition((int)LastBallPosition.Value.X, (int)LastBallPosition.Value.Y);
-                Console.Write(" ");
-            }
+                // Clear the ball's previous position if it exists.
+                if (LastBallPosition.HasValue)
+                {
+                    Console.SetCursorPosition((int)LastBallPosition.Value.X, (int)LastBallPosition.Value.Y);
+                    Console.Write(" ");
+                }
 
-            // Set the cursor position to the ball's current position and display it.
-            Console.SetCursorPosition((int)BallPosition.X, (int)BallPosition.Y);
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.Write(BALL_FORM);
-            Console.ResetColor();
+                // Set the cursor position to the ball's current position and display it.
+                Console.SetCursorPosition((int)BallPosition.X, (int)BallPosition.Y);
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.Write(BALL_FORM);
+                Console.ResetColor();
+            }
         }
 
         /// <summary>
@@ -149,9 +152,10 @@ namespace P_POO_320
                         {
                             IsDestroyed = true;
                             // Destroy the corresponding block in the tower and update its display.
-                            Tower.DestroyBlock(Tower.Height, Tower.Width);
-                            Tower.Display();
+                            Tower.DestroyBlock((int)(BallPosition.X - Tower.TowerPosition.X), (int)(BallPosition.Y - Tower.TowerPosition.Y));
                             DestroyBall();
+                            Tower.Display();
+                            
                         }
 
                         // If the ball is destroyed, break out of the loop.
@@ -169,7 +173,11 @@ namespace P_POO_320
                 }
 
                 // Display the ball's updated position on the screen.
-                Display();
+                if (!IsDestroyed)
+                {
+                    Display();
+                }
+                
 
                 // Detect spacebar press to launch the ball.
                 if (!isBallLaunched && Console.KeyAvailable)
@@ -177,7 +185,7 @@ namespace P_POO_320
                     ConsoleKeyInfo key = Console.ReadKey(true);
                     if (key.Key == ConsoleKey.Spacebar)
                     {
-                        LaunchBall(angle: 50f, force: 5f, startPosition: currentPlayer.PlayerPosition);
+                        LaunchBall(angle: 60f, force: 5f, startPosition: currentPlayer.PlayerPosition);
                         isBallLaunched = true;
                     }
                 }
