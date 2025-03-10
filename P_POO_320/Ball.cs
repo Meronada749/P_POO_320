@@ -39,7 +39,7 @@ namespace P_POO_320
         /// <summary>
         /// Constant value for the friction applied to the ball's velocity.
         /// </summary>
-        private const float FRICTION = 0.2f;
+        private const float TIME_STEP = 0.1f;
 
         /// <summary>
         /// Constant value for gravity applied to the ball (affects the vertical velocity).
@@ -82,7 +82,7 @@ namespace P_POO_320
                 if (LastBallPosition.HasValue)
                 {
                     Console.SetCursorPosition((int)LastBallPosition.Value.X, (int)LastBallPosition.Value.Y);
-                    Console.Write(" ");
+                    Console.Write(' ');
                 }
 
                 // Set the cursor position to the ball's current position and display it.
@@ -123,10 +123,10 @@ namespace P_POO_320
             LastBallPosition = BallPosition;
 
             // Update the ball's position based on its velocity, considering friction.
-            BallPosition += Velocity * FRICTION;
+            BallPosition += Velocity * TIME_STEP;
 
             // Apply gravity to the vertical component of the velocity.
-            Velocity = new Vector2(Velocity.X, Velocity.Y + GRAVITY * FRICTION);
+            Velocity = new Vector2(Velocity.X, Velocity.Y + GRAVITY * TIME_STEP);
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace P_POO_320
                     ConsoleKeyInfo key = Console.ReadKey(true);
                     if (key.Key == ConsoleKey.Spacebar)
                     {
-                        LaunchBall(angle: 60f, force: 5f, startPosition: currentPlayer.PlayerPosition);
+                        LaunchBall(angle: 55f, force: 5f, startPosition: currentPlayer.PlayerPosition);
                         isBallLaunched = true;
                     }
                 }
