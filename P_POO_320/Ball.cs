@@ -62,7 +62,7 @@ namespace P_POO_320
         /// </summary>
         public Ball()
         {
-            BallPosition = Vector2.Zero;
+            BallPosition = new Vector2 (3, 27);
             Velocity = Vector2.Zero;
             LastBallPosition = null;
 
@@ -115,7 +115,7 @@ namespace P_POO_320
         }
 
         /// <summary>
-        /// Updates the ball's position based on its velocity and applies gravity and friction.
+        /// Updates the ball's position based on its velocity and applies gravity and time_step.
         /// </summary>
         public void UpdateBallPosition()
         {
