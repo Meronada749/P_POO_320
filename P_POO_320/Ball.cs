@@ -1,16 +1,16 @@
-﻿/// <summary>
-/// ETML
+﻿/// ETML
 /// Author: Meron Essayas
 /// Date: 17.01.2025
-/// Description: Ball class representing a ball object in the game.
-/// </summary>
 
 using System;
 using System.Numerics;
 
 namespace P_POO_320
 {
-    internal class Ball : IUpdateable, IDamageable
+    /// <summary>
+    /// Ball class representing a ball object in the game.
+    /// </summary>
+    internal sealed class Ball : IUpdateable, IDamageable
     {
         /// <summary>
         /// Field to store the ball's position as a Vector2.
@@ -66,7 +66,7 @@ namespace P_POO_320
             Velocity = Vector2.Zero;
             LastBallPosition = null;
 
-            // Adds the ball to the updateable list in the game (assumed to be a game loop).
+            // Adds the ball to the updateable list in the game.
             Game.updateable.Add(this);
         }
 
@@ -153,11 +153,9 @@ namespace P_POO_320
                             IsDestroyed = true;
                             // Destroy the corresponding block in the tower and update its display.
                             Tower.DestroyBlock((int)(BallPosition.X - Tower.TowerPosition.X), (int)(BallPosition.Y - Tower.TowerPosition.Y));
-                            DestroyBall();
+                            Destroy();
                             Tower.Display();
-                            
                         }
-
                         // If the ball is destroyed, break out of the loop.
                         if (IsDestroyed)
                         {
@@ -210,7 +208,7 @@ namespace P_POO_320
         /// <summary>
         /// Destroys the ball by marking it as destroyed and clearing its position on the screen.
         /// </summary>
-        public void DestroyBall()
+        public void Destroy()
         {
             IsDestroyed = true;
             Console.SetCursorPosition((int)BallPosition.X, (int)BallPosition.Y);

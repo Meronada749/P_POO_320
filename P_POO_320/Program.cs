@@ -1,22 +1,18 @@
-﻿/// <summary>
-/// ETML
+﻿/// ETML
 /// Author: Meron Essayas
 /// Date: 17.01.2025
-/// Description: Main program that runs the ball game.
-/// </summary>
 
 using System;
 using System.Text;
 
 namespace P_POO_320
 {
-    internal class Program
+    /// <summary>
+    /// Main program that runs the ball game.
+    /// </summary>
+    internal sealed class Program
     {
-        /// <summary>
-        /// The main entry point for the program.
-        /// Initializes and runs the game loop.
-        /// </summary>
-        static void Main(string[] args)
+        static void Main()
         {
             // Create a new instance of the Game class.
             Game game = new Game();
@@ -56,8 +52,6 @@ namespace P_POO_320
                 {
                     item.Display();
                 }
-
-                
 
                 // Wait for the user to press Enter to continue to the next iteration of the game loop.
                 // This can be removed for smoother gameplay if not required.

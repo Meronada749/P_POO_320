@@ -1,16 +1,16 @@
-﻿/// <summary>
-/// ETML
+﻿/// ETML
 /// Author: Meron Essayas
 /// Date: 17.01.2025
-/// Description: The Player class that represents the players in the game.
-/// </summary>
 
 using System;
 using System.Numerics;
 
 namespace P_POO_320
 {
-    internal class Player : IUpdateable, IDamageable
+    /// <summary>
+    /// The Player class that represents the players in the game.
+    /// </summary>
+    internal sealed class Player : IUpdateable
     {
         /// <summary>
         /// field to store the player's position as a Vector2.
@@ -90,10 +90,6 @@ namespace P_POO_320
                 // Reset the console text color back to default.
                 Console.ResetColor();
             }
-        }
-        public void DestroyBall()
-        {
-
         }
     }
 }

@@ -1,17 +1,17 @@
-﻿/// <summary>
-/// ETML
+﻿/// ETML
 /// Author: Meron Essayas
 /// Date: 17.01.2025
-/// Description: The Tower class that represents the towers in the game.
-/// </summary>
 
 using System;
 using System.Numerics;
 
 namespace P_POO_320
 {
-   internal class Tower : IUpdateable, IDamageable
-   {
+    /// <summary>
+    /// The Tower class that represents the towers in the game.
+    /// </summary>
+    internal sealed class Tower : IUpdateable
+    {
         /// <summary>
         /// Private field to store the position of the tower.
         /// </summary>
@@ -138,8 +138,5 @@ namespace P_POO_320
             if (x >= 0 && x < Width && y >= 0 && y < Height)
                 CellState[y, x] = false; // Mark the block as destroyed (set to false).
         }
-
-    public void DestroyBall() { }
-
-   }
+    }
 }

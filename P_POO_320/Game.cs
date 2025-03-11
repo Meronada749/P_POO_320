@@ -1,16 +1,16 @@
-﻿/// <summary>
-/// ETML
+﻿/// ETML
 /// Author: Meron Essayas
 /// Date: 17.01.2025
-/// Description: The Game class that coordinates the entire game logic.
-/// </summary>
 
 using System.Collections.Generic;
 using System.Numerics;
 
 namespace P_POO_320
 {
-    internal class Game
+    /// <summary>
+    /// The Game class that coordinates the entire game logic.
+    /// </summary>
+    internal sealed class Game
     {
         /// <summary>
         /// The position of the ground (Y coordinate represents the ground level).

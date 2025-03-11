@@ -1,12 +1,17 @@
-﻿///ETML
-///Auteur : Meron Essayas
-///Date : 11.02.2025
-///Description: 
+﻿/// ETML
+/// Author: Meron Essayas
+/// Date: 17.01.2025
 
 namespace P_POO_320
 {
+    /// <summary>
+    /// Interface for the damageable objects
+    /// </summary>
     internal interface IDamageable
     {
-        void DestroyBall();
+        /// <summary>
+        /// allows to destroy objects
+        /// </summary>
+        void Destroy();
     }
 }
