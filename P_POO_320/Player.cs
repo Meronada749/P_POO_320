@@ -95,38 +95,5 @@ namespace P_POO_320
         {
 
         }
-        //public void DisplayPlayerInfo(Player player, int topMargin)
-        //{
-        //    // Calculate the position of the player info box
-        //    int posX = player.PositionX - SCORE_BOX_WIDTH / 2;
-        //    int posY = topMargin;
-
-        //    // Draw top border
-        //    Console.SetCursorPosition(posX, posY);
-        //    Console.Write("+");
-        //    Console.Write(new string('-', SCORE_BOX_WIDTH));
-        //    Console.Write("+");
-
-        //    // Display player name
-        //    Console.SetCursorPosition(posX, posY + 1);
-        //    Console.Write($"| {player.Name}".PadRight(SCORE_BOX_WIDTH + 1) + "|");
-
-        //    // Draw middle separator
-        //    Console.SetCursorPosition(posX, posY + 2);
-        //    Console.Write("|" + new string('-', SCORE_BOX_WIDTH) + "|");
-
-        //    // Display player statistics
-        //    Console.SetCursorPosition(posX, posY + 3);
-        //    DisplayGameStatistic("Lives", player.Lives.ToString());
-        //    Console.SetCursorPosition(posX, posY + 4);
-        //    DisplayGameStatistic("Score", player.Score.ToString());
-
-        //    // Draw bottom border
-        //    Console.SetCursorPosition(posX, posY + 5);
-        //    Console.Write("+");
-        //    Console.Write(new string('-', SCORE_BOX_WIDTH));
-        //    Console.Write("+");
-
-        //}
     }
 }
