@@ -100,38 +100,10 @@ namespace P_POO_320
         }
 
         /// <summary>
-        /// Checks if the tower collides with a ball at the given position.
-        /// </summary>
-        /// <param name="ballPosition">The position of the ball to check for collision with the tower.</param>
-        /// <returns>True if the ball collides with any part of the tower; otherwise, false.</returns>
-        public bool CheckCollision(Vector2 ballPosition)
-        {
-            // Check each cell of the tower to see if the ball is touching it.
-            for (int y = 0; y < Height; ++y)
-            {
-                for (int x = 0; x < Width; ++x)
-                {
-                    if (CellState[y, x])  // If the cell is intact
-                    {
-                        // Calculate the position of the current cell.
-                        float cellX = _towerposition.X + x;
-                        float cellY = _towerposition.Y + y;
-
-                        // Check if the ball touches this cell.
-                        if (ballPosition.X >= cellX && ballPosition.X < cellX + 1 && ballPosition.Y >= cellY && ballPosition.Y < cellY + 1)
-                            return true; // Collision detected
-                    }
-                }
-            }
-            return false; // No collision detected
-        }
-
-        /// <summary>
         /// Destroys the specific cell of the tower at the given (x, y) position.
         /// </summary>
         /// <param name="x">The X coordinate of the cell to destroy.</param>
         /// <param name="y">The Y coordinate of the cell to destroy.</param>
-
         public void DestroyBlock(int x, int y)
         {
             // Ensure the (x, y) coordinates are within the bounds of the tower.
